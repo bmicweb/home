@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<style>
+    *{
+    margin: 0px;
+    padding: 0px;
+    }
+    body{
+        height: 100vh;
+        width: 100%;
+        justify-content: center;
+        background-image: url(images/background.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    img{
+        border-radius: 100px;
+    }
+    a{
+        text-decoration: none;
+    }
+</style>
+<body>
+    <section class="d-flex align-items-center" style="height: 100vh;">
+        <div class="container d-flex border border-5 p-0" style="height: 95vh; border-radius: 25px;">
+            <div class="col-2 bg-dark" style="height: 100%; border-bottom-left-radius: 25px; border-top-left-radius: 25px;">
+                <div class="container d-flex flex-column align-items-center justify-content-center mt-4">
+                    <div class="mb-3" style="width: 35%;">
+                        <img src="images/logo.PNG" style="width: 100%;">
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                        <p class="text-white text-center fw-bold m-0" style="font-size: 14px;">
+                            BANDALLE MARINE AND INDUSTRIAL CORPORATION
+                        </p>
+                    </div>
+                </div>
+                <hr style="color: white;">
+                <div class="container d-flex flex-column align-items-center justify-content-center">
+                    <div class="mb-3" style="width: 40%; height: 60%;">
+                        <img src="images/picture.png" style="width: 100%;">
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+                        <p class="text-white text-center fs-5 fw-bold m-0">
+                            CHRISTINE LOVE BOLOLATO
+                        </p>
+                        <p class="text-white text-center fs-6 fw-bold m-0">
+                            Sales Representative
+                        </p>
+                    </div>
+                </div>
+                <hr class="py-3" style="color: white;">
+                <div class="d-flex flex-column ps-3">
+                    <div class="d-flex mb-5">
+                        <div class="d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                                <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
+                            </svg>
+                        </div>
+                        <h6 id="dashboardTab" onclick="showDashboard()" class="ms-3" style="color: white;">DASHBOARD</h6>
+                    </div>
+                    <div class="d-flex mb-5">
+                        <div class="d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-receipt" viewBox="0 0 16 16">
+                                <path d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27zm.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0l-.509-.51z"/>
+                                <path d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"/>
+                            </svg>
+                        </div>
+                        <h6 id="transactionFormTab" onclick="showTransactionForm()" class="ms-3" style="color: aqua;">TRANSACTION FORM</h6>
+                    </div>
+                    <div class="d-flex mb-5">
+                        <div class="d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-house-door" viewBox="0 0 16 16">
+                                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z"/>
+                            </svg>
+                        </div>
+                        <h6 id="inventoryTab" onclick="showInventory()" class="ms-3" style="color: white;">INVENTORY</h6>
+                    </div>
+                    <a href="index.html" class="d-flex mb-5">
+                        <div class="d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-power" viewBox="0 0 16 16">
+                                <path d="M7.5 1v7h1V1h-1z"/>
+                                <path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/>
+                            </svg>
+                        </div>
+                        <h6 class="ms-3" style="color: white;">LOGOUT</h6>
+                    </a>
+                </div>
+            </div>
+            <div id="dashboard" class="col bg-secondary p-3" style="display: none; height: 100%; border-bottom-right-radius: 25px; border-top-right-radius: 25px;">
+                <div class="container-fluid d-flex flex-wrap m-0">
+                    <div class="col-4 d-flex align-items-center ps-3" style="height: 5%;">
+                        <div class="d-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                                <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="fw-bold text-white m-0 ps-3">DASHBOARD</h3>
+                    </div>
+                    <div class="col-8 bg-secondary" style="height: 5%; border-top-right-radius: 25px; background-color: beige;">
+                        
+                    </div>
+                    <div class="col-8 d-flex flex-column pt-3" style="height: 95%;">
+                        <div class="col-12" style="height: 25%; background-color: beige;">
+
+                        </div>
+                        <div class="col-12 pt-3 d-flex justify-content-between" style="height: 25%;">
+                            <div class="col-4 pe-2 d-flex">
+                                <div class="col-12" style=" background-color: beige;">
+
+                                </div>
+                            </div>
+                            <div class="col-4 px-2 d-flex">
+                                <div class="col-12" style="background-color: beige;">
+
+                                </div>
+                            </div>
+                            <div class="col-4 ps-2 d-flex">
+                                <div class="col-12" style="background-color: beige;">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex pt-3" style="height: 50%;">
+                            <div class="col-6 d-flex pe-2" >
+                                <div class="col-12" style="background-color: beige;">
+    
+                                </div>
+                            </div>
+                            <div class="col-6 d-flex ps-2">
+                                <div class="col-12" style="background-color: beige;">
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 d-flex ps-3 pt-3" style="height: 95%;;">
+                        <div class="col-12" style="background-color: beige; border-bottom-right-radius: 25px">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="transactionForm" class="col bg-secondary p-3" style="display: flex; height: 100%; border-bottom-right-radius: 25px; border-top-right-radius: 25px;">
+                <div class="container-fluid d-flex flex-wrap m-0">
+                    <div class="col-5 d-flex align-items-center ps-3" style="height: 5%;">
+                        <div class="d-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-receipt" viewBox="0 0 16 16">
+                                <path d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27zm.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0l-.509-.51z"/>
+                                <path d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="fw-bold text-white m-0 ps-3">TRANSACTION FORM</h3>
+                    </div>
+                    <div class="col-12 d-flex pt-3" style="height: 95%;">
+                        <div class="col-12 d-flex" style="background-color: beige; border-top-right-radius: 25px; border-bottom-right-radius: 25px;">
+                            <form  class="container-fluid ps-5 pt-3" action="https://script.google.com/macros/s/AKfycby3ghwmurvfm8Mm8yDQbbCuF3Yi9Y7uQlnMgPbQOQdz10b2a5s6wnt0T81OFvWdJWe1yA/exec" method="post">
+                                <div class="rows d-flex mb-2">
+                                    <div class="col-3">
+                                        <label class=""><h5>Branch</h5></label>
+                                        <select class="form-control" name="branch" required>
+                                            <option value="">Choose Branch</option>
+                                            <option value="CEBU">CEBU</option>
+                                            <option value="GENSAN">GENSAN</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-3">
+                                        <label class=""><h5>Item ID</h5></label>
+                                        <select name="item_id" id="item_id" class="form-control" placeholder="Input Item ID" required>
+                                            <option value="">Choose Item ID</option>
+                                        </select>
+                                        </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-3">
+                                        <label class=""><h5>Available Stock</h5></label>
+                                        <input name="available_stock" id="available_stock" class="form-control" type="text" readonly>
+                                    </div>
+                                </div>
+                                <div class="rows d-flex mb-2">
+                                    <div class="col-11">
+                                        <label class=""><h5>Item Name</h5></label>
+                                        <select name="item_name" id="item_name" class="form-control" type="text" required>
+                                            v<option value="">Choose Item Name</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="rows d-flex mb-2">
+                                    <div class="col-3">
+                                        <label class=""><h5>Date</h5></label>
+                                        <input name="date" class="form-control" type="date" required>
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-3">
+                                        <label class=""><h5>Mode of Transaction</h5></label>
+                                        <select name="mode_of_transaction" class="form-control" required>
+                                            <option value="">Choose Mode of Transaction</option>
+                                            <option value="SOLD">SOLD</option>
+                                            <option value="TRANS-IN">TRANS-IN</option>
+                                            <option value="TRANS-OUT">TRANS-OUT</option>
+                                            <option value="RETURNED">RETURNED</option>
+                                            <option value="RE-DELIVER">RE-DELIVER</option>
+                                            <option value="DAMAGED">DAMAGED</option>
+                                        </select>                                    
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-3">
+                                        <label class=""><h5>Quantity</h5></label>
+                                        <input name="quantity" class="form-control" type="number" placeholder="Input Quantity" required>
+                                    </div>
+                                </div>
+                                <div class="rows d-flex mb-2">
+                                    <div class="col-3">
+                                        <label class=""><h5>Purchase Order #</h5></label>
+                                        <input name="purchase_order" class="form-control" type="text" placeholder="Input Purchase Order #" required>
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-3">
+                                        <label class=""><h5>Sales Invoice #</h5></label>
+                                        <input name="sales_invoice" class="form-control" type="text" placeholder="Input Sales Invoice #" required>
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-3">
+                                        <label class=""><h5>Delivery Receipt #</h5></label>
+                                        <input name="delivery_receipt" class="form-control" type="text" placeholder="Input Delivery Receipt #" required>
+                                    </div>
+                                </div>
+                                <div class="rows d-flex mb-2">
+                                    <div class="col-11">
+                                        <label class=""><h5>Customer Name</h5></label>
+                                        <input name="customer_name" class="form-control" type="text" placeholder="Input Customer Name" required>
+                                    </div>
+                                </div>
+                                <div class="rows d-flex mb-2">
+                                    <div class="col-3">
+                                        <label class=""><h5>Expiration Date</h5></label>
+                                        <input name="expiration_date" class="form-control" type="date" placeholder="Input Purchase Order #">
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-3">
+                                        <label class=""><h5>Lot #</h5></label>
+                                        <input name="lot" class="form-control" type="text" placeholder="Input Sales Invoice #">
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-3">
+                                        <label class=""><h5>Batch #</h5></label>
+                                        <input name="batch" class="form-control" type="text" placeholder="Input Delivery Receipt #">
+                                    </div>
+                                </div>
+                                <div class="rows d-flex mb-2">
+                                    <div class="col-3">
+                                        <label class=""><h5>Serial #</h5></label>
+                                        <input name="serial" class="form-control" type="text" placeholder="Input Purchase Order #">
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-3">
+                                        <label class=""><h5>withdrawal #</h5></label>
+                                        <input name="withdrawal" class="form-control" type="text" placeholder="Input Sales Invoice #">
+                                    </div>
+                                </div>
+                                <div class="rows d-flex mb-2">
+                                    <div class="col-11">
+                                        <label class=""><h5>Remarks</h5></label>
+                                        <input name="remarks" class="form-control" type="text" placeholder="Input Customer Name">
+                                    </div>
+                                </div>
+                                <div class="rows d-flex mb-2 d-none">
+                                    <div class="col-11">
+                                        <label class=""><h5>Remarks</h5></label>
+                                        <input name="encoder" class="form-control" type="text" value="CHRISTINE MAE BOLOLATO">
+                                    </div>
+                                </div>
+                                <div class="rows d-flex mb-2">
+                                    <div class="col-5">
+                                        <button type="reset" class="form-control bg-danger fs-3 fw-bold text-white">
+                                            Clear
+                                        </button>
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-5">
+                                        <button type="submit" class="form-control bg-success fs-3 fw-bold text-white">
+                                            Submit
+                                        </button>                                    
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="inventory" class="col bg-secondary p-3" style="display: none; height: 100%; border-bottom-right-radius: 25px; border-top-right-radius: 25px;">
+                <div class="container-fluid d-flex flex-wrap m-0">
+                    <div class="col-5 d-flex align-items-center ps-3" style="height: 5%;">
+                        <div class="d-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-house-door" viewBox="0 0 16 16">
+                                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="fw-bold text-white m-0 ps-3">INVENTORY</h3>
+                    </div>
+                    <div class="col-7" style="height: 5%; border-top-right-radius: 25px">
+                        
+                    </div>
+                    <div class="col-8 d-flex flex-column pt-3" style="height: 95%;">
+                        <div class="col-12" style="height: 25%; background-color: beige;">
+
+                        </div>
+                        <div class="col-12 pt-3 d-flex justify-content-between" style="height: 25%;">
+                            <div class="col-4 pe-2 d-flex">
+                                <div class="col-12" style=" background-color: beige;">
+
+                                </div>
+                            </div>
+                            <div class="col-4 px-2 d-flex">
+                                <div class="col-12" style="background-color: beige;">
+
+                                </div>
+                            </div>
+                            <div class="col-4 ps-2 d-flex">
+                                <div class="col-12" style="background-color: beige;">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex pt-3" style="height: 50%;">
+                            <div class="col-6 d-flex pe-2" >
+                                <div class="col-12" style="background-color: beige;">
+    
+                                </div>
+                            </div>
+                            <div class="col-6 d-flex ps-2">
+                                <div class="col-12" style="background-color: beige;">
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 d-flex ps-3 pt-3" style="height: 95%;;">
+                        <div class="col-12" style="background-color: beige;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>>
+</body>
+</html>
